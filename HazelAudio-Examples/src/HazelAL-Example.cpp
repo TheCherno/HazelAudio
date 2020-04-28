@@ -9,6 +9,8 @@ int main()
 	Hazel::Audio::Init();
 	// Load audio source from file
 	auto source = Hazel::AudioSource::LoadFromFile("assets/BackgroundMusic.mp3", false);
+	// Make it loop forever
+	source.SetLoop(true);
 	// Play audio source
 	Hazel::Audio::Play(source);
 

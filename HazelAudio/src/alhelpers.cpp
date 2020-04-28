@@ -35,15 +35,11 @@
 #include <string.h>
 
 #include "AL/al.h"
-#include "AL/alc.h"
-
 
 /* InitAL opens a device and sets up a context using default attributes, making
  * the program ready to call OpenAL functions. */
-int InitAL(char ***argv, int *argc)
+int InitAL(ALCdevice*& device, char ***argv, int *argc)
 {
-    const ALCchar *name;
-    ALCdevice *device;
     ALCcontext *ctx;
 
     /* Open and initialize a device */
@@ -73,13 +69,6 @@ int InitAL(char ***argv, int *argc)
         fprintf(stderr, "Could not set a context!\n");
         return 1;
     }
-
-    name = NULL;
-    if(alcIsExtensionPresent(device, "ALC_ENUMERATE_ALL_EXT"))
-        name = alcGetString(device, ALC_ALL_DEVICES_SPECIFIER);
-    if(!name || alcGetError(device) != AL_NO_ERROR)
-        name = alcGetString(device, ALC_DEVICE_SPECIFIER);
-    printf("Opened \"%s\"\n", name);
 
     return 0;
 }

@@ -48,6 +48,9 @@ namespace Hazel {
 
 		static AudioSource LoadAudioSource(const std::string& filename);
 		static void Play(const AudioSource& source);
+
+		// TODO: temporary whilst Hazel Audio is in early dev
+		static void SetDebugLogging(bool log);
 	private:
 		static AudioSource LoadAudioSourceOgg(const std::string& filename);
 		static AudioSource LoadAudioSourceMP3(const std::string& filename);

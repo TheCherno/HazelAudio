@@ -48,6 +48,8 @@ project "HazelAudio"
 	{
 		"%{prj.name}/src",
 		"HazelAudio/vendor/OpenAL-Soft/include",
+		"HazelAudio/vendor/OpenAL-Soft/src",
+		"HazelAudio/vendor/OpenAL-Soft/src/common",
 		"HazelAudio/vendor/libogg/include",
 		"HazelAudio/vendor/Vorbis/include",
 		"HazelAudio/vendor/minimp3"
